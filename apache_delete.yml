@@ -1,0 +1,12 @@
+---
+- name: install apache
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install apache web server
+    yum: name=httpd state=absent
+
+
+  - name: install firewwall
+    yum: name=firewalld state=absent
